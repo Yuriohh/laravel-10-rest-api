@@ -17,9 +17,12 @@ class PaginationPresenter implements PaginationInterface
     ) {
         $this->items = $this->resolveItems($this->paginator->items());
     }
+    /**
+     * @return stdClass[]
+     */
     public function items(): array
     {
-        return $this->items();
+        return $this->items;
     }
     public function total(): int
     {
