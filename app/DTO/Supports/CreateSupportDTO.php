@@ -1,21 +1,19 @@
 <?php
 
-namespace App\DTO;
+namespace App\DTO\Supports;
 use App\Http\Requests\StoreUpdateSupport;
 
-class UpdateSupportDTO
+class CreateSupportDTO
 {
     public function __construct(
-        public string $id,
         public string $subject,
         public string $status,
         public string $body
     ) {}
 
-    public static function updateFromRequest(StoreUpdateSupport $request): self
+    public static function createFromRequest(StoreUpdateSupport $request): self
     {
         return new self(
-            $request->id,
             $request->subject,
             'a',
             $request->body
