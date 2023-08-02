@@ -13,10 +13,10 @@ class UpdateSupportDTO
         public string $body
     ) {}
 
-    public static function updateFromRequest(StoreUpdateSupport $request): self
+    public static function updateFromRequest(StoreUpdateSupport $request, string $id): self
     {
         return new self(
-            $request->id,
+            $id ?? $request->id,
             $request->subject,
             SupportStatus::A,
             $request->body
